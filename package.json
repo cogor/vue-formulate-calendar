@@ -1,14 +1,29 @@
 {
   "name": "vue-formulate-calendar",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Wrapper for using v-calendar in vue-formulate",
+  "version": "0.1.1",
+  "private": false,
+  "homepage": "https://github.com/cogor/vue-formulate-calendar/#readme",
+  "bugs": {
+    "url": "https://github.com/jamiesoncj/vue-formulate-star-rating/issues"
+  },
+  "author": "Ilya Artamonov <hire@ilya-artamonov.ru> (https://ilya-artamonov.ru/)",
+  "license": "LGPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cogor/vue-formulate-calendar.git"
+  },
+  "main": "./dist/VueFormulateCalendar.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --target lib --name VueFormulateCalendar src/main.js",
+    "lint": "vue-cli-service lint",
+    "prebuild": "rm -rf dist/",
+    "postbuild": "rm dist/demo.html"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "v-calendar": "^2.3.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -22,5 +37,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
     "vue-template-compiler": "^2.6.11"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }

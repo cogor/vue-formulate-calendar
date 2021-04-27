@@ -1,8 +1,15 @@
-import Vue from "vue";
-import App from "./App.vue";
+import VueFormulateCalendar from "./VueFormulateCalendar.vue";
 
-Vue.config.productionTip = false;
-
-new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+export default function VueFormulateCalendarPlugin(formulateInstance) {
+  formulateInstance.extend({
+    components: {
+      VueFormulateCalendar,
+    },
+    library: {
+      calendar: {
+        classification: "date",
+        component: "VueFormulateCalendar",
+      },
+    },
+  });
+}
